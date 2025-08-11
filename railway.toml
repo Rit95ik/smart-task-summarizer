@@ -1,8 +1,10 @@
 [build]
-command = "cd server && npm install"
+builder = "nixpacks"
+command = "npm install"
 
 [deploy]
-startCommand = "cd server && npm start"
+startCommand = "npm start"
+numReplicas = 1
 
 [env]
 NODE_ENV = "production"
