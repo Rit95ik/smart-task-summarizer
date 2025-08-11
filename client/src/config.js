@@ -1,17 +1,17 @@
 // API Configuration
-const API_URL = process.env.VITE_API_URL || 
-  (process.env.NODE_ENV === 'production' 
-    ? 'https://smart-task-summarizer-backend.onrender.com'
-    : 'http://localhost:3001');
+const envApiUrl = import.meta.env.VITE_API_URL;
+const currentMode = import.meta.env.MODE;
+
+const API_URL = envApiUrl || 'https://smart-task-summarizer-backend.onrender.com';
 
 // Frontend URL for reference  
-const FRONTEND_URL = process.env.NODE_ENV === 'production'
+const FRONTEND_URL = currentMode === 'production'
   ? window.location.origin
   : 'http://localhost:5174';
 
 // For debugging
 console.log('API URL:', API_URL);
 console.log('Frontend URL:', FRONTEND_URL);
-console.log('Environment:', process.env.NODE_ENV);
+console.log('Environment:', currentMode);
 
 export { API_URL, FRONTEND_URL };

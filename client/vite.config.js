@@ -17,9 +17,7 @@ export default defineConfig({
       // Allow all Cloudflare tunnel domains
       '*.trycloudflare.com'
     ],
-    hmr: {
-      clientPort: 443, // ensure HMR works over HTTPS
-    },
+    // Let Vite pick best HMR settings locally
     proxy: {
       '/api': {
         target: process.env.NODE_ENV === 'production' 
