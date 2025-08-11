@@ -15,12 +15,7 @@ function App() {
       try {
         setConnectionStatus('checking');
         // Try to connect to the API server
-        // Check if we're running on a Cloudflare domain
-        const isCloudflare = window.location.hostname.includes('trycloudflare.com');
-        const apiEndpoint = isCloudflare 
-          ? 'https://fix-list-lexmark-techno.trycloudflare.com'
-          : 'http://localhost:3001';
-        
+        const apiEndpoint = API_URL;
         console.log('Checking connection to:', apiEndpoint);
         const response = await axios.get(apiEndpoint, { 
           timeout: 5000,
@@ -82,12 +77,7 @@ function App() {
 
       console.log('Tasks to process:', taskList);
       
-      // Check if we're running on a Cloudflare domain
-      const isCloudflare = window.location.hostname.includes('trycloudflare.com');
-      const apiEndpoint = isCloudflare 
-        ? 'https://fix-list-lexmark-techno.trycloudflare.com'
-        : 'http://localhost:3001';
-      
+      const apiEndpoint = API_URL;
       console.log(`Sending request to: ${apiEndpoint}/tasks`);
 
       // Send tasks to the server for processing

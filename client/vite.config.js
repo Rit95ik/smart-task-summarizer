@@ -23,7 +23,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: process.env.NODE_ENV === 'production' 
-          ? 'https://fix-list-lexmark-techno.trycloudflare.com' 
+          ? 'https://smart-task-summarizer-backend.onrender.com' 
           : 'http://localhost:3001',
         changeOrigin: true,
         secure: false,

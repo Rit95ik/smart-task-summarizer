@@ -1,7 +1,7 @@
 // API Configuration
 const API_URL = process.env.VITE_API_URL || 
   (process.env.NODE_ENV === 'production' 
-    ? 'https://your-railway-app.railway.app'
+    ? 'https://smart-task-summarizer-backend.onrender.com'
     : 'http://localhost:3001');
 
 // Frontend URL for reference  
