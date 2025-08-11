@@ -1,15 +1,17 @@
 // API Configuration
-const API_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://fix-list-lexmark-techno.trycloudflare.com/api' 
-  : 'http://localhost:3001';
+const API_URL = process.env.VITE_API_URL || 
+  (process.env.NODE_ENV === 'production' 
+    ? 'https://your-railway-app.railway.app'
+    : 'http://localhost:3001');
 
-// Frontend URL for reference
+// Frontend URL for reference  
 const FRONTEND_URL = process.env.NODE_ENV === 'production'
-  ? 'https://none-primary-speeds-bean.trycloudflare.com'
+  ? window.location.origin
   : 'http://localhost:5174';
 
 // For debugging
 console.log('API URL:', API_URL);
 console.log('Frontend URL:', FRONTEND_URL);
+console.log('Environment:', process.env.NODE_ENV);
 
 export { API_URL, FRONTEND_URL };
